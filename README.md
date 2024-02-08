@@ -64,24 +64,24 @@
 
 5. ## **Propuesta de Monitoreo**
 
-    a. Para monitorear eficazmente un **ML Pipeline**, es fundamental seleccionar métricas apropiadas que proporcionen una visión completa del rendimiento del modelo y del proceso en general. Algunas métricas propuestas y su importancia incluyen:
+    - Para monitorear eficazmente un **ML Pipeline**, es fundamental seleccionar métricas apropiadas que proporcionen una visión completa del rendimiento del modelo y del proceso en general. Algunas métricas propuestas y su importancia incluyen:
 
-    **Precisión del modelo:** Mide la proporción de predicciones correctas sobre el total de predicciones realizadas. Es importante porque indica la exactitud del modelo en la clasificación de datos, lo que permite evaluar su capacidad para tomar decisiones precisas.
+        **Precisión del modelo:** Mide la proporción de predicciones correctas sobre el total de predicciones realizadas. Es importante porque indica la exactitud del modelo en la clasificación de datos, lo que permite evaluar su capacidad para tomar decisiones precisas.
+    
+        **Recall:** Mide la proporción de instancias positivas que fueron correctamente identificadas por el modelo. Esta métrica es esencial para evaluar la capacidad del modelo para encontrar todos los casos positivos, lo que es crítico en aplicaciones donde la detección de casos positivos es prioritaria.
+    
+        **F1-score:** Es una medida que combina la precisión y el recall en una sola métrica. Es útil para tener una visión equilibrada del rendimiento del modelo, especialmente cuando hay un desequilibrio entre las clases de interés.
+    
+        **Tiempo de entrenamiento y de predicción:** Estas métricas son importantes para evaluar la eficiencia del pipeline. Un aumento en el tiempo de entrenamiento o predicción puede indicar problemas de escalabilidad o rendimiento que deben abordarse.
 
-    **Recall:** Mide la proporción de instancias positivas que fueron correctamente identificadas por el modelo. Esta métrica es esencial para evaluar la capacidad del modelo para encontrar todos los casos positivos, lo que es crítico en aplicaciones donde la detección de casos positivos es prioritaria.
+    - Para configurar alertas para cambios y problemas en la calidad de datos en el modelo implementado, se pueden considerar las siguientes estrategias:
 
-    **F1-score:** Es una medida que combina la precisión y el recall en una sola métrica. Es útil para tener una visión equilibrada del rendimiento del modelo, especialmente cuando hay un desequilibrio entre las clases de interés.
+        **Monitoreo de datos de entrada:** Establecer alertas para detectar cambios significativos en la distribución de los datos de entrada. Esto podría indicar problemas de calidad de datos, como la presencia de valores atípicos o la falta de datos relevantes.
+    
+        **Validación de datos en tiempo real:** Implementar controles de calidad de datos en tiempo real durante el proceso de predicción para detectar datos corruptos o inconsistentes. Esto podría incluir la detección de valores faltantes o fuera de rango, así como la comparación con valores esperados.
 
-    **Tiempo de entrenamiento y de predicción:** Estas métricas son importantes para evaluar la eficiencia del pipeline. Un aumento en el tiempo de entrenamiento o predicción puede indicar problemas de escalabilidad o rendimiento que deben abordarse.
+    - Para configurar alertas y acciones para una posible degradación del modelo, se pueden considerar las siguientes estrategias:
 
-    b. Para configurar alertas para cambios y problemas en la calidad de datos en el modelo implementado, se pueden considerar las siguientes estrategias:
-
-    **Monitoreo de datos de entrada:** Establecer alertas para detectar cambios significativos en la distribución de los datos de entrada. Esto podría indicar problemas de calidad de datos, como la presencia de valores atípicos o la falta de datos relevantes.
-
-    **Validación de datos en tiempo real:** Implementar controles de calidad de datos en tiempo real durante el proceso de predicción para detectar datos corruptos o inconsistentes. Esto podría incluir la detección de valores faltantes o fuera de rango, así como la comparación con valores esperados.
-
-    c. Para configurar alertas y acciones para una posible degradación del modelo, se pueden considerar las siguientes estrategias:
-
-    **Seguimiento de métricas de rendimiento:** Establecer umbrales para las métricas de rendimiento del modelo y configurar alertas para detectar una disminución significativa en estas métricas. Esto podría indicar una degradación en el rendimiento del modelo que requiere atención.
-
-    **Implementación de pruebas A/B:** Comparar el rendimiento del modelo actual con versiones anteriores utilizando pruebas A/B. Si se detecta una diferencia significativa en el rendimiento, se pueden activar alertas para investigar y abordar posibles problemas.
+        **Seguimiento de métricas de rendimiento:** Establecer umbrales para las métricas de rendimiento del modelo y configurar alertas para detectar una disminución significativa en estas métricas. Esto podría indicar una degradación en el rendimiento del modelo que requiere atención.
+    
+        **Implementación de pruebas A/B:** Comparar el rendimiento del modelo actual con versiones anteriores utilizando pruebas A/B. Si se detecta una diferencia significativa en el rendimiento, se pueden activar alertas para investigar y abordar posibles problemas.
